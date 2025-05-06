@@ -1,43 +1,39 @@
 import 'package:flutter/material.dart';
+import 'package:com/pantalla_inicial.dart';
+import 'package:com/gesture_detector.dart';
+import 'package:com/alert_dialog.dart';
+import 'package:com/slider.dart';
+import 'package:com/icon_button.dart';
+import 'package:com/clip_oval.dart';
+import 'package:com/placeholder.dart';
+import 'package:com/fitted_box.dart';
+import 'package:com/show_modelbottomsheet.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(MiExamen());
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-  // This widget is the root of your application.
+class MiExamen extends StatelessWidget {
+  const MiExamen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // Application name
-      title: 'Flutter Hello World',
-      // Application theme data, you can set the colors for the application as
-      // you want
-      theme: ThemeData(
-        // useMaterial3: false,
-        primarySwatch: Colors.blue,
-      ),
-      // A widget which will be started on application startup
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
+      debugShowCheckedModeBanner: false,
+      title: 'Rutas entre paginas',
+      initialRoute: '/',
+      routes: {
+        // When navigating to the "/" route, build the FirstScreen widget.
+        '/': (context) => const PantallaUno(),
+        '/pantallados': (context) => const PantallaDos(),
+        '/pantallatres': (context) => const PantallaTres(),
+        '/pantallacuatro': (context) => const PantallaCuatro(),
+        '/pantallacinco': (context) => const PantallaCinco(),
+        '/pantallaseis': (context) => const PantallaSeis(),
+        '/pantallasiete': (context) => const PantallaSiete(),
+        '/pantallaocho': (context) => const PantallaOcho(),
+        '/pantallanueve': (context) => const PantallaNueve(),
 
-class MyHomePage extends StatelessWidget {
-  final String title;
-  const MyHomePage({super.key, required this.title});  
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        // The title text which will be shown on the action bar
-        title: Text(title),
-      ),
-      body: Center(
-        child: Text(
-          'Hello, World!',
-        ),
-      ),
+        // When navigating to the "/second" route, build the SecondScreen widget.
+      },
     );
   }
 }
